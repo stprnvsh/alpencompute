@@ -1,2 +1,2 @@
 # alpencompute
-alpencompute.ch
+www.alpencompute.ch
