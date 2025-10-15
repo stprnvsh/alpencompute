@@ -34,8 +34,8 @@ Example directory structure on the appliance:
 /etc/alpencompute/
 ├── site.yaml              # site identity, control plane endpoint, tokens
 ├── inventory/
-│   ├── nine-zrh.yaml      # Nine.ch rack description
-│   └── phoenix-gva.yaml   # Phoenix Systems nodes
+│   ├── partner-zrh.yaml   # Partner rack description
+│   └── partner-gva.yaml   # Additional partner nodes
 └── policies/
     ├── allowlists.yaml    # tenant allow lists per SKU
     └── pricing.yaml       # hourly price definitions
@@ -45,21 +45,21 @@ Each `inventory/*.yaml` file contains:
 
 ```yaml
 sku: h100x8-nvswitch-2tb
-provider: nine
+provider: partner
 region: ch-zrh-1
 nodes:
-  - serial: NINE-H100-01
+  - serial: PARTNER-H100-01
     bmc:
       endpoint: https://10.0.0.15/redfish
       username: admin
-      password: ${vault:site/nine-h100-01}
+      password: ${vault:site/partner-h100-01}
     tags:
       racks: [zrh-row5]
       purpose: production
     warm_pool:
       target: 2
       imaging_profile: ubuntu22-nvidia535
-  - serial: NINE-H100-02
+    - serial: PARTNER-H100-02
     ...
 ```
 
@@ -91,9 +91,9 @@ are preserved so the scheduler can honour them.
 
 ## Roll-out Plan
 
-1. **Pilot (Phase 0 complete)** – use existing Nine/Phoenix manifests to ingest
-   their racks and exercise the bootstrap workflow end-to-end.  Validate HA by
-   failing individual control plane replicas.
+1. **Pilot (Phase 0 complete)** – use the partner template manifests to ingest
+   racks and exercise the bootstrap workflow end-to-end.  Validate HA by failing
+   individual control plane replicas.
 2. **Phase 1** – add declarative policy files and expose them via the
    `OperatorRegistry` API so the global scheduler respects organisation-specific
    rules.  Deliver CLI tooling (`alpencompute operators sync`) to push catalogue

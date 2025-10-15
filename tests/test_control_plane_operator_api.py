@@ -7,8 +7,8 @@ from alpencompute.mesh.site_operator import SiteHeartbeat
 def test_operator_registration_and_inventory_ingestion_round_trip():
     registry = OperatorRegistry()
     operator = registry.register_operator(
-        name="Nine.ch",
-        contact_email="ops@nine.ch",
+        name="Example Partner",
+        contact_email="ops@example.com",
         jurisdiction="CH",
         metadata={"vat": "CHE-123"},
     )

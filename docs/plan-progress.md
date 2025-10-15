@@ -14,6 +14,9 @@ This tracker mirrors the roadmap described in `docs/byo-bare-metal.md` and captu
 - [ ] Enhance warm pool manager with predictive sizing based on demand telemetry.
 - [ ] Integrate sandboxed runtimes (Firecracker/gVisor) into workload execution path.
 - [ ] Ship CLI/SDK updates enabling unified `alpencompute run` targeting BYO nodes.
+- [ ] Design and land the GPU cluster compositor module (`alpencompute.mesh.gpu_clusters`) grouping nodes into multi-GPU slots.
+- [ ] Expose multi-GPU accelerator descriptors and runtime launchers that prepare NCCL/CUDA wiring automatically.
+- [ ] Publish cluster slot metadata, pricing, and policies through the control plane (`docs/byo-gpu-clusters.md`).
 
 ## Phase 2 – Marketplace & Billing (Weeks 11-16)
 

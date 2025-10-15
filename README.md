@@ -18,10 +18,14 @@ to the architecture documentation.
   inventory ingestion endpoints powering the bring-your-own flow.
 
 Refer to `docs/byo-bare-metal.md` for a full design overview, `docs/operator-architecture.md`
-for control-plane vs. site responsibilities, and `docs/plan-progress.md` for roadmap
-execution status.
+for control-plane vs. site responsibilities, `docs/byo-gpu-clusters.md` for the
+bring-your-own multi-GPU cluster blueprint, and `docs/plan-progress.md` for
+roadmap execution status. The day-to-day validation workflow is captured in
+`docs/testing-guide.md`.
 ## Examples
 
-- `examples/operators/nine_phoenix` – sample site operator integrations for Nine.ch and Phoenix Systems, complete with control plane wiring and warm pool orchestration.
+- `examples/operators/partner_template` – provider-agnostic site operator
+  template showcasing control plane wiring, secure bootstrap, and warm pool
+  orchestration for any partner or on-premise fleet.
 
 
